@@ -1,0 +1,50 @@
+{
+    "Aries" : {
+        "compatible":["Leo", "Sagittarius", "Gemini", "Aquarius"],
+        "incompatible":["Cancer","Capricorn"]
+        },
+    "Taurus" : {
+        "compatible":["Virgo", "Capricorn", "Cancer", "Pisces"],
+        "incompatible":["Leo", "Aquarius"]
+        },
+    "Gemini" : {
+        "compatible":["Libra", "Aquarius", "Leo", "Aries"],
+        "incompatible":["Leo", "Aquarius"]
+        },
+    "Cancer" : {
+            "compatible":["Scorpio", "Pisces", "Virgo", "Taurus"],
+            "incompatible":["Virgo", "Pisces"]
+        },
+    "Leo" : {
+        "compatible":["Sagittarius", "Aries", "Gemini", "Libra"],
+        "incompatible":["Taurus", "Scorpio"]
+        },
+    "Virgo" : {
+        "compatible":["Capricon", "Taurus", "Scorpio", "Cancer"],
+        "incompatible":["Gemini", "Capricorn"]
+        },
+    "Libra" : {
+        "compatible":["Aquarius", "Gemini", "Leo", "Sagittarius"],
+        "incompatible":["Cancer", "Capricorn"]
+        },
+    "Scorpio" : {
+        "compatible":["Pisces", "Cancer", "Virgo", "Capricorn"],
+        "incompatible":["Leo", "Aquarius"]
+        },
+    "Sagittarius" : {
+        "compatible":["Aries", "Leo", "Libra", "Aquarius"],
+        "incompatible":["Virgo", "Pisces"]
+        },
+    "Capricorn" : {
+        "compatible":["Taurus", "Virgo", "Scorpio", "Pisces"],
+        "incompatible":["Aries", "Libra"]
+        },
+    "Aquarius" : {
+        "compatible":["Gemini", "Libra", "Aries", "Sagittarius"],
+        "incompatible":["Cancer"]
+        },
+    "Pisces" : {
+        "compatible":["Cancer", "Scorpio", "Taurus", "Capricorn"],
+        "incompatible":["Virgo"]
+        }
+}
