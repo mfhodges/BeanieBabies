@@ -18,9 +18,11 @@ return(
         <p>
             After I had scrapped all the data I needed for this project, I let my motivation slip .Then one day in March I was looking at the Beanie Baby that sits at my desk, Scurry,  and noticed my bug friend was born on January 18th. I had missed his birthday 😭!!!
         </p>
-        <center><p>	Insert image of scurry here</p></center>
+        <center><p>(Insert image of scurry here)</p></center>
         <p>
-            I realized my life-long friend Scurry was also a Capricorn. As a Scorpio, I was shocked by our bond since we traditionally are not very compatible. And then it hit me ... they ALL have ZODIAC SIGNS!!! I realized my app could be truly unique since I could not only consolidate data already existing on the web but also provide this very important meta-data about the Beanie Babies’ Zodiac signs. No other website ( that I know of at least ) lets you search a Database of Beanie Babies, see their Zodiac Signs, and find what Beanie Babies you are most compatible with!
+            I realized my life-long friend Scurry was also a Capricorn. As a Scorpio, I was shocked by our bond since we traditionally are not very compatible.</p>
+            <blockquote> And then it hit me ... they ALL have ZODIAC SIGNS!!!</blockquote> 
+            <p>I realized my app could be truly unique since I could not only consolidate data already existing on the web but also provide this very important meta-data about the Beanie Babies’ Zodiac signs. No other website ( that I know of at least ) lets you search a Database of Beanie Babies, see their Zodiac Signs, and find what Beanie Babies you are most compatible with!
         </p>
     </div>
     )

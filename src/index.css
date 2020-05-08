@@ -914,8 +914,6 @@ dl {
     content: ":";
   }
 
-
-
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -924,7 +922,7 @@ dl {
     grid-auto-flow: dense;
   }
   
-  
+
   .card {
     background: #fff;
     padding-top: 0.6em;
@@ -934,6 +932,7 @@ dl {
     cursor: pointer;
     box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25), 0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
     transition: all ease 200ms;
+    max-width:300px;
   }
   
   .card:hover {
@@ -941,11 +940,12 @@ dl {
     box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12), 0 8px 32px -8px hsla(0, 0%, 0%, 0.14), 0 -6px 32px -6px hsla(0, 0%, 0%, 0.02);
   }
   
-  
-  .card p {
-    color: #777;
+
+
+  .card h4 {
+    color:#000;
   }
-  
+
   .card h5 {
     color: #bbb;
     font-weight: 700;
@@ -958,3 +958,11 @@ dl {
   .card-body {
     padding: 0em 0.5em 1em 0.5em;
   }
+
+
+  .homepage-image{
+    float:right;
+    margin-top:-85px;
+    max-width:30%;
+    height:auto;
+}
