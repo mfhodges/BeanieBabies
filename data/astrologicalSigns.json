@@ -1,4 +1,8 @@
-{ 
+{  
+    "Aquarius" :
+        {"start": "1/20","end": "2/18"},
+    "Pisces" :
+        {"start": "2/19","end": "3/20"},
     "Aries" : 
         {"start": "3/21","end": "4/19"}, 
     "Taurus" :
@@ -18,10 +22,6 @@
     "Sagittarius" :
         {"start": "11/22","end": "12/21"},
     "Capricorn" :
-        {"start": "12/22","end": "1/19"},
-    "Aquarius" :
-        {"start": "1/20","end": "2/18"},
-    "Pisces" :
-        {"start": "2/19","end": "3/20"}
+        {"start": "12/22","end": "1/19"}
 }
 
