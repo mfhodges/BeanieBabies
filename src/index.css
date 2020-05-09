@@ -81,6 +81,7 @@ body {
 }
 
 @media only screen and (min-width: 992px) {
+    
 }
 
 nav,.pagination,.header-links {
@@ -243,6 +244,9 @@ article blockquote cite:before {
 }
 
 @media only screen and (min-width: 992px) {
+    #root>header h1{
+        color: #1a1a1a;
+    }
     article blockquote {
         padding-left:1.5em;
         border-left-width: 4px
@@ -500,8 +504,18 @@ body {
         padding: .25em 0
     }
   #root>header h1 {
-    font-size:4.3em;
+    font-size:4.2em;
+
   }
+
+  @media screen and (max-width: 450px) {
+    #root>header h1 {
+        font-size:3em;
+    
+      }
+
+  }
+
  /* #root {
         font-size:.85em
   }*/
@@ -916,7 +930,7 @@ dl {
 
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     grid-template-rows: repeat(6, auto-fit);
     grid-gap: 1rem;
     grid-auto-flow: dense;
@@ -951,7 +965,7 @@ dl {
     font-weight: 700;
     font-size: 0.7em;
     letter-spacing: 0.04em;
-    margin: 1.4em 0 0 0;
+    margin: 0.8em 0 0 0;
     text-transform: uppercase;
   }
   
@@ -966,3 +980,19 @@ dl {
     max-width:30%;
     height:auto;
 }
+
+
+@media screen and (max-width: 450px) {
+    #root>header h1 {
+        font-size:3em;
+      }
+    #root>header {
+        height: 120px
+      }
+
+      #root>header hgroup {
+        padding: 3em 0 1em 2em;
+      }
+
+
+  }

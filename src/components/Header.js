@@ -15,9 +15,9 @@ const Header = () =>
             </ul>
         </header>
         <nav role="navigation" class="header-nav"><ul class="main-navigation">
-            <li><Link to="/random">🎲 Random</Link></li>
-            <li><Link to="/search">🔍 Search</Link></li>
-            <li><Link to="/birthday">🎂 Bday</Link></li>
+            <li><Link to="/random">🎲Random</Link></li>
+            <li><Link to="/search">🔍Search</Link></li>
+            <li><Link to="/birthday">🎂Bday</Link></li>
         </ul>
         </nav>
     </Fragment>
