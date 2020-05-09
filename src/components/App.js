@@ -1,5 +1,6 @@
 import { Switch, Route } from 'react-router-dom'
-import React, {Fragment} from 'react'
+import React, {Fragment, useEffect} from 'react'
+import ReactGA from 'react-ga'
 import Header from './Header'
 import Footer from './Footer'
 import Home from '../pages/Home'
@@ -9,7 +10,21 @@ import BBProfile from '../pages/BBProfile'
 import Birthday from '../pages/Birthday'
 import Search from '../pages/Search'
 
-const App = () => (
+
+
+function App() {
+  useEffect(() => {
+    ReactGA.initialize('UA-165762946-2');
+    // To Report Page View 
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [])
+
+  useEffect(() => {
+   console.log(window.location.pathname)
+  })
+
+
+return (
   <Fragment>
       <Header />
       <div id="main">
@@ -39,7 +54,8 @@ const App = () => (
       </div>
       <Footer />
   </Fragment>
-)
+);
+}
 
 export default App
 
