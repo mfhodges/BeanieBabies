@@ -34,6 +34,7 @@
     "start": "npm-run-all --parallel watch:server start:web",
     "start:web": "react-scripts start",
     "start:server": "node src/server",
+    "server": "nodemon ./server/server.js",
     "watch:server": "nodemon --watch src/server src/server",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

@@ -1,0 +1,15 @@
+apollo-app
+├── client                     # The client package
+│   └── src                    # All the source files of the React app
+│       ├── config             # The React application settings
+│       ├── modules            # The client-side modules
+│       ├── App.js             # The React application's main component
+│       ├── index.html         # React application template
+│       └── index.js           # React application entry point
+├── node_modules               # Global Node.js modules
+├── server                     # The server package
+│   ├── config                 # The Express application configurations
+│   ├── modules                # Server modules
+│   └── server.js              # The Express application's entry point
+├── package.json               # Project metadata and packages
+└── webpack.config.js          # Webpack configuration for React
