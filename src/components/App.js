@@ -10,7 +10,8 @@ import BBProfile from '../pages/BBProfile'
 import Birthday from '../pages/Birthday'
 import Search from '../pages/Search'
 
-
+import { ApolloProvider } from 'react-apollo';
+import apolloClient from '../config/createApolloClient';
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
 
 
 return (
+  <ApolloProvider client={apolloClient}>
   <Fragment>
       <Header />
       <div id="main">
@@ -54,6 +56,7 @@ return (
       </div>
       <Footer />
   </Fragment>
+  </ApolloProvider>
 );
 }
 
