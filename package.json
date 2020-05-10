@@ -34,7 +34,7 @@
     "sqlite": "^4.0.7"
   },
   "scripts": {
-    "start": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server\"",
+    "start": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\"",
     "start:web": "react-scripts start",
     "start:server": "node src/server",
     "watch:server": "nodemon --watch src/server src/server",
@@ -43,7 +43,7 @@
     "eject": "react-scripts eject",
     "server": "nodemon ./server/server.js",
     "client": "react-scripts start",
-    "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server\""
+    "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\""
   },
   "eslintConfig": {
     "extends": "react-app"
