@@ -33,7 +33,7 @@
     "sqlite": "^4.0.7"
   },
   "scripts": {
-    "start": "concurrently \"yarn client\" \"yarn server\"",
+    "start": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server\"",
     "start:web": "react-scripts start",
     "start:server": "node src/server",
     "watch:server": "nodemon --watch src/server src/server",
