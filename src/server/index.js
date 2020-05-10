@@ -3,6 +3,8 @@ const { ApolloServer, gql } = require('apollo-server');
 
 //https://www.apollographql.com/docs/apollo-server/getting-started/
 
+// PLEASE READ : https://www.apollographql.com/docs/react/performance/server-side-rendering/
+
 // A schema is a collection of type definitions (hence "typeDefs")
 // that together define the "shape" of queries that are executed against
 // your data.

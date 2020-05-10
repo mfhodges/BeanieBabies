@@ -9,7 +9,7 @@ const Header = () =>
                 <h1><a href="/">Beanie Babies</a></h1>
             </hgroup>
             <ul class="header-links">
-                <li><Link to="/graphql">GraphQL</Link></li>
+                <li><a href="/graphql">GraphQL</a></li>
                 <li><Link to="/about">About</Link></li>
                 <li><a href="https://github.com/Mfhodges/beaniebabies">Github</a></li>
             </ul>

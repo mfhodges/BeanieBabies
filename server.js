@@ -11,7 +11,6 @@ import { schema } from './src/schema';
 
 
 
-
 // enable ssl redirect
 //app.use(sslRedirect());
 app.use(favicon(__dirname + '/build/favicon.ico'));
