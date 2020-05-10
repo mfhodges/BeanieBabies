@@ -42,7 +42,7 @@
     "eject": "react-scripts eject",
     "server": "nodemon ./server/server.js",
     "client": "react-scripts start",
-    "dev": "concurrently \"yarn client\" \"yarn server\""
+    "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server\""
   },
   "eslintConfig": {
     "extends": "react-app"
