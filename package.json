@@ -37,7 +37,7 @@
     "start:server": "node server/server",
     "server": "nodemon ./server/server.js",
     "watch:server": "nodemon --watch server/server server/server",
-    "build": "react-scripts build",
+    "build": "cd client && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "server3":"cd server && node server",
