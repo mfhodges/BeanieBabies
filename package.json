@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.9.5",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "apollo-boost": "^0.4.8",
     "apollo-server": "^2.13.0",
     "apollo-server-express": "^2.13.0",
@@ -34,16 +31,11 @@
     "sqlite": "^4.0.7"
   },
   "scripts": {
-    "start": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\"",
-    "start:web": "react-scripts start",
-    "start:server": "node src/server",
-    "watch:server": "nodemon --watch src/server src/server",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "server": "nodemon ./server/server.js",
-    "client": "react-scripts start",
-    "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\""
+    "build": "concurrently \"cd client && npm run build\" \"cd server && npm run build\"",
+    "heroku-postbuild": "npm run build",
+    "install": "(cd client && npm) && (cd server && npm)",
+    "start": "concurrently \"cd client && PORT=3000 npm run start\" \"cd server && PORT=3001 npm run start\"",
+    "start:prod": "cd server && npm run start:prod"  
   },
   "eslintConfig": {
     "extends": "react-app"

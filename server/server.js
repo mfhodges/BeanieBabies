@@ -22,8 +22,8 @@ const app = express();
 server.applyMiddleware({ app });
 
 // #8 Set the port that the Express application will listen to
-app.listen(4000, () => {
-  console.log(`Server running on http://localhost:4000${server.graphqlPath}`);
+app.listen(3001, () => {
+  console.log(`Server running on http://localhost:3001${server.graphqlPath}`);
 });
 
 /** 
