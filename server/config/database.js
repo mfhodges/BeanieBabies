@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const DB_URI = 'mongodb://localhost:27017/graphql-app';
 
 // #3 Connect to MongoDB
-mongoose.connect(DB_URI, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || DB_URI, { useNewUrlParser: true });
 
 // #4 Add basic event listeners on the mongoose.connection object
 mongoose.connection.once('open', () => console.log('Connected to a MongoDB instance'));
