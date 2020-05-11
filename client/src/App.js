@@ -41,7 +41,7 @@ return (
             Learn React
           </a>
         </header>
-        <p>{this.state.response}</p>
+        <p>hello world</p>
 </div>
 );
 }
