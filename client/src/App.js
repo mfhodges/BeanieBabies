@@ -46,7 +46,7 @@ return (
               <Route path="/birthday">
                 <Birthday />
               </Route>
-              {/*<Route path="/beanies/:bbID" component={BBProfile}/>*/}
+              <Route path="/beanies/:bbID" component={BBProfile}/>
             </Switch>
             </article>
           </div>
