@@ -26,22 +26,34 @@ function App() {
 
 
 return (
-  <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        <p>hello world</p>
-</div>
+<Fragment>
+      <Header />
+      <div id="main">
+        <div id="content">
+          <div>
+            <article role="article">
+            <Switch>
+            <Route path="/search">
+                <Search />
+              </Route>
+              <Route exact path="/" component={Home} />
+              <Route path="/random">
+                <Random />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/birthday">
+                <Birthday />
+              </Route>
+              {/*<Route path="/beanies/:bbID" component={BBProfile}/>*/}
+            </Switch>
+            </article>
+          </div>
+        </div>
+      </div>
+      <Footer />
+  </Fragment>
 );
 }
 
