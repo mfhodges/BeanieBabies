@@ -1,17 +1,17 @@
 import { Switch, Route } from 'react-router-dom'
 import React, {Fragment, useEffect} from 'react'
 import ReactGA from 'react-ga'
-import Header from './Header'
-import Footer from './Footer'
-import Home from '../pages/Home'
-import Random from '../pages/Random'
-import About from '../pages/About'
-import BBProfile from '../pages/BBProfile'
-import Birthday from '../pages/Birthday'
-import Search from '../pages/Search'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Random from './pages/Random'
+import About from './pages/About'
+import BBProfile from './pages/BBProfile'
+import Birthday from './pages/Birthday'
+import Search from './pages/Search'
 
 import { ApolloProvider } from 'react-apollo';
-import apolloClient from '../config/createApolloClient';
+import apolloClient from './config/createApolloClient';
 
 function App() {
   useEffect(() => {
@@ -60,7 +60,7 @@ return (
 );
 }
 
-export default App
+export default App;
 
 /*
 
