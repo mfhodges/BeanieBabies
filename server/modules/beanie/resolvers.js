@@ -9,7 +9,7 @@ const Beanie = require('./models/beanie.model');
 const resolvers = {
   Query: {
     // Query which returns posts list
-    beanies: () => Beanie.find({}),
+    beanies: () => []//Beanie.find({}),
   },
 
 /**

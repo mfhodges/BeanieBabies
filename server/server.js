@@ -1,51 +1,64 @@
 // #1 Import Express and Apollo Server
 const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
 const { ApolloServer } = require('apollo-server-express');
+const cors = require('cors');
 
+// #6 Initialize an Express application
+const app = express();
+// Apply CORS so server can be on the same domain
+app.use(cors());
+
+const port = process.env.PORT || 5000;
+
+
+////// GRAPHQL SERVER /////
 // #2 Import mongoose
-const mongoose = require('./config/database');
+//const mongoose = require('./config/database');
 
 // #3 Import GraphQL type definitions
 const typeDefs = require('./modules/beanie/graphqlSchema');
-
-
 // #4 Import GraphQL resolvers
 const resolvers = require('./modules/beanie/resolvers');
 
 // #5 Initialize an Apollo server
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ 
+  typeDefs,
+  resolvers,
+  playground: true,
+  introspection:true 
+});
 
-// #6 Initialize an Express application
-const app = express();
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // #7 Use the Express application as middleware in Apollo server
-server.applyMiddleware({ app });
+// and set to path /graphql
+server.applyMiddleware({ app, path: '/graphql' });
+
+
+
+// if in production serve React app from build
+// if not in production start app & server with yarn dev - runs them on diff ports
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'client/build')));
+    
+  // Handle React routing, return all requests to React app
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
+
+
 
 // #8 Set the port that the Express application will listen to
-app.listen(3001, () => {
-  console.log(`Server running on http://localhost:3001${server.graphqlPath}`);
-});
-
-/** 
- * const express = require('express');
-const favicon = require('express-favicon');
-const path = require('path');
-const port = process.env.PORT || 8080;
-const app = express();
-// enable ssl redirect
-//app.use(sslRedirect());
-app.use(favicon(__dirname + '/build/favicon.ico'));
-// the __dirname is the current directory from where the script is running
-app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, 'build')));
-app.get('/ping', function (req, res) {
- return res.send('pong');
-});
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-app.use('/graphql', bodyParser.json(), graphqlExpress({
-  schema
-}));
-app.listen(port);*/
+app.listen(port, () => 
+console.log(
+  `Listening on port ${port}`,
+  `\nWebsite → http://localhost:${3000}`,
+  `\nGraphQL   → http://localhost:${port}${server.graphqlPath}/`));

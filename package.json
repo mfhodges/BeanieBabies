@@ -32,18 +32,12 @@
     "sqlite": "^4.0.7"
   },
   "scripts": {
-    "start": "npm-run-all --parallel watch:server start:web",
-    "start:web": "cd client && react-scripts start",
-    "start:server": "node server/server",
-    "server": "nodemon ./server/server.js",
-    "watch:server": "nodemon --watch server/server server/server",
-    "build": "cd client && react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "server3":"cd server && node server",
-    "server1": "nodemon ./server/server.js",
-    "client": "cd client npm start",
-    "s": "concurrently \"yarn client\" \"yarn server\""
+    "start": "node server/server.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "client": "cd client && yarn start",
+    "server": "nodemon server/server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+
   },
   "eslintConfig": {
     "extends": "react-app"
