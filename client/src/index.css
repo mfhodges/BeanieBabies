@@ -997,6 +997,22 @@ dl {
       #root>footer {
         border-radius: 0px 0px 0px 0px;
     }
+    #profile {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr 1fr 1fr;
+        height: inherit;
+        grid-template-areas:
+        "data" 
+        "img"
+        "desc"
+        "poem"
+        "note";
+    }
+    #polaroid {
+        margin-left: 11%;
+        margin-top: 10px;
+    }
 
 
   }
