@@ -3,12 +3,12 @@
 const { Schema, model }  = require('mongoose');
 
 // #2 Instantiate a schema using mongoose Schema
-const postSchema = new Schema({
+const beanieSchema = new Schema({
   title: String,
   birthday: String
 });
 
 // #3 Create a model with mongoose model() method
-const Beanie = model('beanie', postSchema);
+const Beanie = model('beanie', beanieSchema);
 
 module.exports = Beanie;

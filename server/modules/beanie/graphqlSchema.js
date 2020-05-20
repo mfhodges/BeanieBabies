@@ -10,6 +10,7 @@ const typeDefs = gql`
     _id: ID,
     title: String,
     birthday: String
+    
   },
   #4 Define the query type that must respond to 'beanies' query
   type Query {
