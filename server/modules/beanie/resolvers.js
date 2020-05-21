@@ -1,5 +1,5 @@
 // #1 Import the model created with mongoose
-const Beanie = require('./models/beanie.model');
+const {Beanie} = require('./models/beanie.model');
 
 // #2 Create resolver functions to handle GraphQL queries
 /**
@@ -8,27 +8,17 @@ const Beanie = require('./models/beanie.model');
  */
 const resolvers = {
   Query: {
-    // Query which returns posts list
-
-    getBeanies: async () => await Beanie.find({}).exec()
+      getBeanies: async () => await Beanie.find({}).exec()
   },
-
-
   Mutation: {
-    addBeanie: async (parent, beanie) => {
-      // Create a new record in the database
-      try {
-        let response = await Beanie.create({ title: beanie.title, birthday: beanie.birthday });
-        return response;
-      } catch(e) {
-        return e.message;
+      addBeanie: async (_, args) => {
+          try {
+              let response = await Beanie.create(args);
+              return response;
+          } catch(e) {
+              return e.message;
+          }
       }
-      //console.log(beanie);
-      //const newBeanie = new Beanie({ title: beanie.title, birthday: beanie.birthday });
-      // Save the record and return it
-      //console.log(newBeanie);
-      //return newBeanie.save();
-    }
   }
 };
 

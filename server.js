@@ -36,7 +36,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 //const typeDefs = require('./server/modules/beanie/graphqlSchema');
 
 //Import GraphQL resolvers
-//const resolvers = require('./server/modules/beanie/resolvers').default;
+const resolvers = require('./server/modules/beanie/resolvers');
  
 const typeDefs = gql`
     type Beanie {
@@ -52,21 +52,7 @@ const typeDefs = gql`
     }
 `;
 
-const resolvers = {
-    Query: {
-        getBeanies: async () => await Beanie.find({}).exec()
-    },
-    Mutation: {
-        addBeanie: async (_, args) => {
-            try {
-                let response = await Beanie.create(args);
-                return response;
-            } catch(e) {
-                return e.message;
-            }
-        }
-    }
-};
+
 
 
 
