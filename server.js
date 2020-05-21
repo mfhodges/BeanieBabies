@@ -3,32 +3,83 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const  { ApolloServer, gql } = require('apollo-server-express');
+const { Beanie } = require('./server/modules/beanie/models/beanie.model');
+
+var mongoose = require('mongoose');
+mongoose.Promise = global.Promise; // not sure what this does
+
+
 
 const app = express();
-app.use(cors());
+//app.use(cors());
 const port = process.env.PORT || 5000;
 
 
-// Import mongoose
-//const mongoose = require('./server/config/database');
+// connect Mongoose to your DB
+mongoose.connect(
+  process.env.MONGODB_URI ||
+  process.env.MONGOLAB_URI ||
+  'mongodb://localhost:27017/beanieDB',{ useNewUrlParser: true });
+
+mongoose.connection.once('open', () => console.log(`Connected to mongo`));
+
+
+//Get the default connection
+var db = mongoose.connection;
+
+
+//Bind connection to error event (to get notification of connection errors)
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 
 //Import GraphQL type definitions
-const typeDefs = require('./server/modules/beanie/graphqlSchema');
+//const typeDefs = require('./server/modules/beanie/graphqlSchema');
 
 //Import GraphQL resolvers
-const resolvers = require('./server/modules/beanie/resolvers');
+//const resolvers = require('./server/modules/beanie/resolvers').default;
  
+const typeDefs = gql`
+    type Beanie {
+        id: ID!
+        title: String
+        birthday: String
+    }
+    type Query {
+        getBeanies: [Beanie]
+    }
+    type Mutation {
+        addBeanie(title: String!, birthday: String!): Beanie
+    }
+`;
+
+const resolvers = {
+    Query: {
+        getBeanies: async () => await Beanie.find({}).exec()
+    },
+    Mutation: {
+        addBeanie: async (_, args) => {
+            try {
+                let response = await Beanie.create(args);
+                return response;
+            } catch(e) {
+                return e.message;
+            }
+        }
+    }
+};
+
+
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  playground: true,
-  introspection: true
+  playground: true//,
+//  introspection: true
 });
 
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+///app.use(bodyParser.json());
+///app.use(bodyParser.urlencoded({ extended: true }));
 
 server.applyMiddleware({ app, path: '/graphql' });
 

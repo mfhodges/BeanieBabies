@@ -23,7 +23,7 @@ mongoose.connect(
   process.env.MONGODB_URI ||
   process.env.MONGOLAB_URI ||
   'mongodb://localhost:27017/beanieDB');
-  
+
 //Get the default connection
 var db = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
@@ -74,6 +74,6 @@ if (process.env.NODE_ENV === 'production') {
 // #8 Set the port that the Express application will listen to
 app.listen(port, () => 
 console.log(
-  `Listening on port ${port}`,
+  `(1)Listening on port ${port}`,
   `\nWebsite → http://localhost:${3000}`,
   `\nGraphQL   → http://localhost:${port}${server.graphqlPath}/`));

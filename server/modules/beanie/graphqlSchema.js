@@ -12,13 +12,13 @@ const typeDefs = gql`
     birthday: String
     
   },
-  #4 Define the query type that must respond to 'beanies' query
+  
   type Query {
-    beanies: [Beanie]
+    getBeanies: [Beanie]
   },
-  #5 Define a mutation to add new beanies with two required fields
+  
   type Mutation {
-    addBeanie(title: String!, Birthday: String!): Beanie,
+    addBeanie(title: String!, birthday: String!): Beanie,
   }
 `;
 

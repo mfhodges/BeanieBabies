@@ -1,14 +1,18 @@
 // #1 Import the constructor Schema and the model() method
 // Note the use of ES6 desctructuring
-const { Schema, model }  = require('mongoose');
+const mongoose = require('mongoose')
+const {Schema}= mongoose;
 
 // #2 Instantiate a schema using mongoose Schema
 const beanieSchema = new Schema({
   title: String,
-  birthday: String
+  birthday: String,
 });
 
 // #3 Create a model with mongoose model() method
-const Beanie = model('beanie', beanieSchema);
+const Beanie = mongoose.model('beanie', beanieSchema);
 
-module.exports = Beanie;
+
+module.exports = {
+  Beanie
+};
