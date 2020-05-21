@@ -52,7 +52,7 @@ const server = new ApolloServer({
 });
 
 
-///app.use(bodyParser.json());
+app.use(bodyParser.json());
 ///app.use(bodyParser.urlencoded({ extended: true }));
 
 server.applyMiddleware({ app, path: '/graphql' });
