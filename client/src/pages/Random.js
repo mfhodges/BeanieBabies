@@ -1,12 +1,30 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import gql from 'graphql-tag';
+import { useQuery } from '@apollo/react-hooks';
+
+//const Beanie = require('./models/beanie.model');
+
+const GET_BEANIES = gql`
+    query {
+        getBeanies {
+            title
+        }
+    }
+  
+`
 
 
 export default function Random () {
+
+const { loading, error, data } = useQuery(GET_BEANIES);
+console.log("data",data);
 
 return(
     <div>
         <h1> okay</h1>
         <p> RANDOM</p>
+
+        
     </div>)
 }
 

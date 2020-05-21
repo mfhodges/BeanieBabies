@@ -11,7 +11,7 @@ mongoose.Promise = global.Promise; // not sure what this does
 
 
 const app = express();
-//app.use(cors());
+app.use(cors());
 const port = process.env.PORT || 5000;
 
 
@@ -33,24 +33,12 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
 //Import GraphQL type definitions
-//const typeDefs = require('./server/modules/beanie/graphqlSchema');
+const typeDefs = require('./server/modules/beanie/graphqlSchema');
 
 //Import GraphQL resolvers
 const resolvers = require('./server/modules/beanie/resolvers');
  
-const typeDefs = gql`
-    type Beanie {
-        id: ID!
-        title: String
-        birthday: String
-    }
-    type Query {
-        getBeanies: [Beanie]
-    }
-    type Mutation {
-        addBeanie(title: String!, birthday: String!): Beanie
-    }
-`;
+
 
 
 

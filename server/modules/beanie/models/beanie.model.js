@@ -7,6 +7,13 @@ const {Schema}= mongoose;
 const beanieSchema = new Schema({
   title: String,
   birthday: String,
+  zodiac: String,
+  img: String,
+  theme: String,
+  styleNumber: String,
+  color:String,
+  animal:String,
+  subTheme: String
 });
 
 // #3 Create a model with mongoose model() method
