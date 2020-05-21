@@ -9,7 +9,7 @@ return(
     <div>
         
         <h1> Welcome!</h1>
-        <img src="/bb_worm.png" class="homepage-image" />
+        <img src="/bb_worm.png" class="homepage-image" alt="Inch the Inchworm Beanie Baby"/>
         <p>
             This site offers a browsable collection of Beanie Babies and their associated meta-data.
 

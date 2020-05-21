@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import { withRouter } from 'react-router'
+
 
 const Header = () =>
     <Fragment>
@@ -8,16 +8,16 @@ const Header = () =>
             <hgroup>
                 <h1><a href="/">Beanie Babies</a></h1>
             </hgroup>
-            <ul class="header-links">
+            <ul className="header-links">
                 <li><a href="/graphql">GraphQL</a></li>
                 <li><Link to="/about">About</Link></li>
                 <li><a href="https://github.com/Mfhodges/beaniebabies">Github</a></li>
             </ul>
         </header>
-        <nav role="navigation" class="header-nav"><ul class="main-navigation">
-            <li><Link to="/random">🎲Random</Link></li>
-            <li><Link to="/search">🔍Search</Link></li>
-            <li><Link to="/birthday">🎂Bday</Link></li>
+        <nav role="navigation" className="header-nav"><ul className="main-navigation">
+            <li><Link to="/random"><span role="img" aria-label="Game Die">🎲</span>Random</Link></li>
+            <li><Link to="/search"><span role="img" aria-label="Magnifying Glass">🔍Search</span></Link></li>
+            <li><Link to="/birthday"><span role="img" aria-label="Birthday Cake">🎂Bday</span></Link></li>
         </ul>
         </nav>
     </Fragment>

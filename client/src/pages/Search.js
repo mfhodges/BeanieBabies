@@ -68,7 +68,7 @@ export default function Search () {
 
 return(
     <Fragment>
-        <h1>🔎 Search 🔍</h1>
+        <h1><span role="img" aria-label="Magnifying Glass">🔎</span> Search <span role="img" aria-label="Magnifying Glass">🔍</span></h1>
         <p>Full search functionality is still being developed. In the meantime please browse the available Beanie Babies below</p>
 
         <div className='cards'>

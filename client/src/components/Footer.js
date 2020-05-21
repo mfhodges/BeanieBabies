@@ -1,11 +1,11 @@
 
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+
 
 
 const Footer = () =>
     <Fragment>
-    <nav role="navigation" class="footer-nav"> <p>✨thanks for visiting ✨</p>
+    <nav role="navigation" class="footer-nav"> <p><span role="img" aria-label="Sparkles">✨</span>thanks for visiting <span role="img" aria-label="Sparkles">✨</span></p>
     </nav>
     <footer role="contentinfo">
         <span class="credit">Built by <a href="https://madeleinehodges.com/"> Maddy Hodges</a>. </span>

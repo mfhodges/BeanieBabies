@@ -9,10 +9,15 @@ import { ApolloClient } from 'apollo-client'
 import { createHttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
-///https://www.howtographql.com/react-apollo/1-getting-started/
+
+/// How will this connect when in production?
 const httpLink = createHttpLink({
-  uri: 'http://localhost:5000/graphql/'
+  //uri: 'http://localhost:5000/graphql/'
+  uri:'/graphql'
 })
+// if we are in production we should do 
+// uri: '/graphql'
+
 
 const client = new ApolloClient({
   link: httpLink,
