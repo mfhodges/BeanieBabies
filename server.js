@@ -39,16 +39,11 @@ const typeDefs = require('./server/modules/beanie/graphqlSchema');
 const resolvers = require('./server/modules/beanie/resolvers');
  
 
-
-
-
-
-
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  playground: true//,
-//  introspection: true
+  playground: true,
+  introspection: true
 });
 
 
