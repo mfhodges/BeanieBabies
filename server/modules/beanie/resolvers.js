@@ -10,7 +10,10 @@ const resolvers = {
   Query: {
       getBeanies: async () => await Beanie.find({}).exec()
   },
-  Mutation: {
+ 
+};
+/**
+ *  Mutation: {
       addBeanie: async (_, args) => {
           try {
               let response = await Beanie.create(args);
@@ -20,7 +23,10 @@ const resolvers = {
           }
       }
   }
-};
+ * 
+ */
+
+
 
 /**
  * Mutation resolver addBeanie creates a new document in MongoDB
