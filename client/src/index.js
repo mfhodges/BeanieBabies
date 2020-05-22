@@ -13,9 +13,14 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 /// How will this connect when in production?
 const httpLink = createHttpLink({
   //uri: 'http://localhost:5000/graphql/'
-  uri:'http://www.beaniebabiesapi.com/graphql',
+  uri:'/graphql',
+  //uri:'http://www.beaniebabiesapi.com/graphql',
   credentials: 'same-origin',
 })
+
+///[1] Proxy error: Could not proxy request /graphql from localhost:3000 to http://localhost:5000/.
+
+
 // if we are in production we should do 
 // uri: '/graphql'
 

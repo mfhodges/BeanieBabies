@@ -18,8 +18,13 @@ const port = process.env.PORT || 5000;
 // connect Mongoose to your DB
 mongoose.connect(
   process.env.MONGODB_URI ||
-  process.env.MONGOLAB_URI ||
-  'mongodb://localhost:27017/beanieDB',{ useNewUrlParser: true });
+  'mongodb://localhost:27017/beanieDB',
+  { useNewUrlParser: true }).then(
+    ()=>{
+      console.log("connected to mongoDB")},
+   (err)=>{
+       console.log("err",err);
+  })
 
 mongoose.connection.once('open', () => console.log(`Connected to mongo`));
 
