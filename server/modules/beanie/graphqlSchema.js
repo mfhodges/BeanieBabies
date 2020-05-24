@@ -30,7 +30,8 @@ const typeDefs = gql`
 
   type Beanie {
     _id: ID,
-    title: String,
+    id: Int
+    title: String
     birthday: String
     zodiac: String
     img: String
@@ -41,9 +42,12 @@ const typeDefs = gql`
     subTheme: String
   },
 
-  
   type Query {
     getBeanies: [Beanie]
+  },
+
+  extend type Query {
+    getBeanie(id: Int, title: String): Beanie
   },
   
   type Mutation {

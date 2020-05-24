@@ -1,7 +1,7 @@
 import React from 'react'
 
 const BBCard = ({beaniebaby}) => (
-  <a href="/beanies/1">
+  <a href={`/beanies/${beaniebaby.id}`}>
   <div className="card">
           <img src={beaniebaby.img} alt="" />
           <div className="card-body">

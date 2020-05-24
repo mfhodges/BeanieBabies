@@ -13,7 +13,8 @@ const beanieSchema = new Schema({
   styleNumber: String,
   color:String,
   animal:String,
-  subTheme: String
+  subTheme: String,
+  id: Number
 });
 
 // #3 Create a model with mongoose model() method

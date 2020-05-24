@@ -8,9 +8,26 @@ const {Beanie} = require('./models/beanie.model');
  */
 const resolvers = {
   Query: {
-      getBeanies: async () => await Beanie.find({}).exec()
-  },
- 
+      getBeanies: async () => {
+          return await Beanie.find({}).exec()
+    },
+    getBeanie: async (_,args) => {
+        console.log("args",args);
+        const bb = await Beanie.findOne(args).exec();
+        console.log("bb",bb);
+       return bb;
+    },
+},
+  Mutation: {
+    addBeanie: async (_, args) => {
+        try {
+            let response = await Beanie.create(args);
+            return response;
+        } catch(e) {
+            return e.message;
+        }
+    }
+}
 };
 /**
  *  Mutation: {

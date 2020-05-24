@@ -12,8 +12,8 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 
 /// How will this connect when in production?
 const httpLink = createHttpLink({
-  //uri: 'http://localhost:5000/graphql/'
-  uri:'/graphql',
+  uri: 'http://localhost:5000/graphql',
+  //uri:'/graphql',
   //uri:'http://www.beaniebabiesapi.com/graphql',
   credentials: 'same-origin',
 })

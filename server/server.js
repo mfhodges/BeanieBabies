@@ -35,7 +35,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 // #3 Import GraphQL type definitions
 const typeDefs = require('./modules/beanie/graphqlSchema');
 // #4 Import GraphQL resolvers
-const resolvers = require('./modules/beanie/resolvers');
+const resolvers = require('./modules/beanie/resolvers').default;
 
 // #5 Initialize an Apollo server
 const server = new ApolloServer({ 
