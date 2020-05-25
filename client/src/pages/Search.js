@@ -43,7 +43,8 @@ export default function Search () {
     return(
         <Fragment>
             <h1><span role="img" aria-label="Magnifying Glass">🔎</span> Search <span role="img" aria-label="Magnifying Glass">🔍</span></h1>
-            <p>searching: {title}</p>
+            <p>Searching: `{title}`</p>
+            <p>To Query Alphabetically, just search the desired letter.</p>
             <form
             onSubmit={e => {
             e.preventDefault();
@@ -64,12 +65,12 @@ export default function Search () {
         </Fragment>)
         }
     
+        // <pre>{JSON.stringify(data,null,2)}</pre>
     return (
         <>
             <h1>Results For: {title}</h1>
-            <p>To Query Alphabetically, just search the desired letter.</p>
             <p>Pagination coming soon.</p>
-            <pre>{JSON.stringify(data,null,2)}</pre>
+            
             <div className='cards'>
             {data.getBeanies.map((beanie) => (
                 <BBCard beaniebaby={beanie} key={beanie.id}/>
