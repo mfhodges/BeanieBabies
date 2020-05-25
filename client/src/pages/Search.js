@@ -27,6 +27,8 @@ query($search: String!) {
  */
 
 
+ /// IF THERE ARE NONE DISPLAY DIFF TEXT
+
 export default function Search () {
     //const [beanies, setBeanies]= useState(null);
     const [title, updateTitle] = useState("Enter Name");
@@ -65,11 +67,12 @@ export default function Search () {
     return (
         <>
             <h1>Results For: {title}</h1>
+            <p>To Query Alphabetically, just search the desired letter.</p>
             <p>Pagination coming soon.</p>
             <pre>{JSON.stringify(data,null,2)}</pre>
             <div className='cards'>
             {data.getBeanies.map((beanie) => (
-                <BBCard beaniebaby={beanie} />
+                <BBCard beaniebaby={beanie} key={beanie.id}/>
             ))}
         </div>
         </>

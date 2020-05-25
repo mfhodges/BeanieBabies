@@ -22,11 +22,22 @@ const resolvers = {
               return await Beanie.find(birthday).exec()
           } 
           if ('search' in args) {
+              // if search is just one letter long do a regex for begins with instead ( caseInsensitve )
               console.log("args.search", args.search);
+              if (args.search.length ==1) {
+                console.log("alphabetical query")
+                const result = await Beanie.find({title: {$regex : "^"+args.search , $options: "i"}}
+                ).exec()
+                console.log("result",result)
+              return result
+              }
+              else {
               const result = await Beanie.find({
                   $text: { $search: args.search }}).exec();
-              console.log("result",result)
-              return result
+                  console.log("result",result)
+                  return result
+              }
+              
             }
           return await Beanie.find({}).exec()
     },
