@@ -59,7 +59,7 @@ export default function BBProfile () {
               <dt>Subtheme</dt>
               <dd>{data.beanie.subTheme}</dd>
               <dt>Birthday</dt>
-              <dd>{data.beanie.birthday.month} {data.beanie.birthday.day}</dd>
+              <dd>{data.beanie.birthday.month}/{data.beanie.birthday.day}</dd>
               <dt>Zodiac</dt>
               <dd>{data.beanie.zodiac}</dd>
             </dl>

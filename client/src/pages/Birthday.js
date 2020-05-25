@@ -58,8 +58,8 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
 const todayDate = new Date();
-const todayMonth = "5";//monthNames[todayDate.getMonth()];
-const todayDay = "18";//todayDate.getDate();
+const todayMonth = todayDate.getMonth();
+const todayDay = todayDate.getDate();
 console.log("Today is ", todayMonth, todayDay);
 // Use a hook to query Graphql to get todays BDAY
 // If none set to sad face
