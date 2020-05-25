@@ -3,24 +3,16 @@ import { useQuery } from 'react-apollo'
 import gql from 'graphql-tag';
 import { useParams } from 'react-router-dom'
 
-const fakedata = {
-    'id': 1,
-    'img': "https://beaniepedia.com/beanies/files/2020/01/kenyaboo-1.jpg",
-    'title': "Kenya the Ostrich (Large)",
-    'birthday': "19 May",
-    'theme': "Beanie Boos",
-    'styleNumber': "36302",
-    'color': "N/A",
-    'animal': "N/A",
-    'subtheme': "None",
-    'zodiac':'Taurus'
-}
 
 const GET_BEANIE = gql`
 query ($id: Int!) {
     beanie: getBeanie(id:$id){
       title
-          birthday
+          birthday {
+              month
+              day
+              year
+          }
           zodiac
           img
           theme
@@ -67,7 +59,7 @@ export default function BBProfile () {
               <dt>Subtheme</dt>
               <dd>{data.beanie.subTheme}</dd>
               <dt>Birthday</dt>
-              <dd>{data.beanie.birthday}</dd>
+              <dd>{data.beanie.birthday.month} {data.beanie.birthday.day}</dd>
               <dt>Zodiac</dt>
               <dd>{data.beanie.zodiac}</dd>
             </dl>

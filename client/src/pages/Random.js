@@ -16,13 +16,13 @@ const GET_BEANIES = gql`
 
 export default function Random () {
 
-const { loading, error, data } = useQuery(GET_BEANIES);
-console.log("data",data);
+//const { loading, error, data } = useQuery(GET_BEANIES);
+//console.log("data",data);
 
 return(
     <div>
-        <h1> okay</h1>
-        <p> RANDOM</p>
+        <h1>Random </h1>
+        <p> Functionality Coming soon</p>
 
         
     </div>)

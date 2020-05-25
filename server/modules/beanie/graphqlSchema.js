@@ -28,11 +28,17 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
 
+  type Birthday {
+    month: String
+    day: String
+    year: String
+  }
+
   type Beanie {
     _id: ID,
     id: Int
     title: String
-    birthday: String
+    birthday: Birthday
     zodiac: String
     img: String
     theme: String
@@ -42,8 +48,14 @@ const typeDefs = gql`
     subTheme: String
   },
 
+  input BirthdayInput {
+    month: String!
+    day: String
+    year: String
+  }
+
   type Query {
-    getBeanies: [Beanie]
+    getBeanies(input: BirthdayInput, search: String): [Beanie]
   },
 
   extend type Query {
@@ -51,7 +63,7 @@ const typeDefs = gql`
   },
   
   type Mutation {
-    addBeanie(title: String!, birthday: String!, zodiac: String!, img: String!, theme: String!, styleNumber: String!, color: String!, animal: String!, subTheme: String
+    addBeanie(title: String!, birthday: String!, zodiac: String!, img: String!, theme: String!, styleNumber: String!, color: String!, animal: String!, subTheme: String!
       ): Beanie,
   }
 `;

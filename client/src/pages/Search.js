@@ -6,62 +6,22 @@ import gql from 'graphql-tag';
 
 
 
-const fakedata = [{
-    'id': 1,
-    'img': "https://beaniepedia.com/beanies/files/2020/01/kenyaboo-1.jpg",
-    'title': "Kenya the Ostrich (Large)",
-    'birthday': "19 May",
-    'theme': "Beanie Boos",
-    'styleNumber': "36302",
-    'color': "N/A",
-    'animal': "N/A",
-    'subtheme': "None",
-    'zodiac': 'Taurus'
-},
-{
-    'id': 2,
-    'img': "https://beaniepedia.com/beanies/files/2020/01/kenyaboo-1.jpg",
-    'title': "Kenya the Ostrich (Large)",
-    'birthday': "19 May",
-    'theme': "Beanie Boos",
-    'styleNumber': "36302",
-    'color': "N/A",
-    'animal': "N/A",
-    'subtheme': "None",
-    'zodiac': 'Taurus'
-},
-{
-    'id': 3,
-    'img': "https://beaniepedia.com/beanies/files/2020/01/kenyaboo-1.jpg",
-    'title': "Kenya the Ostrich (Large)",
-    'birthday': "19 May",
-    'theme': "Beanie Boos",
-    'styleNumber': "36302",
-    'color': "N/A",
-    'animal': "N/A",
-    'subtheme': "None",
-    'zodiac': 'Taurus'
-}]
-
 
 const SEARCH_BEANIES = gql`
-query {
-    getBeanies {
+query($search: String!) {
+    getBeanies(search:$search) {
     id
     img
     title
-    birthday
-    theme
-    styleNumber
-    color
-    animal
-    subTheme
     zodiac
     }
   }
 `
 
 /**
+ * 
+ * 
+ * 
  * The useLazyQuery hook is perfect for executing queries in response to events other than component rendering
  * https://www.apollographql.com/docs/react/data/queries/#executing-queries-manually
  */
@@ -69,9 +29,10 @@ query {
 
 export default function Search () {
     //const [beanies, setBeanies]= useState(null);
-    const [getBeanies, { called,loading,data}] = useLazyQuery(SEARCH_BEANIES);
     const [title, updateTitle] = useState("Enter Name");
-
+    const [getBeanies, { called,loading,data}] = useLazyQuery(SEARCH_BEANIES,
+        {variables: { "search": title}});
+    
 
     if (called && loading) return <p>Loading</p>;
 

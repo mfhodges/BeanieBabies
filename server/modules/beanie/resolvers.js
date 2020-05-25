@@ -1,6 +1,7 @@
 // #1 Import the model created with mongoose
 const {Beanie} = require('./models/beanie.model');
 
+
 // #2 Create resolver functions to handle GraphQL queries
 /**
  * Query resolver "beanies" must return values in response to
@@ -8,7 +9,25 @@ const {Beanie} = require('./models/beanie.model');
  */
 const resolvers = {
   Query: {
-      getBeanies: async () => {
+      getBeanies: async (_,args) => {
+          console.log("_",_)
+          console.log("args",args)
+          if ('input' in args) {
+              console.log("args.input.month",args.input.month)
+              const birthday = {"birthday.month":args.input.month}
+              if ('day' in args.input) {
+                  birthday['birthday.day'] = args.input.day
+              }
+              console.log("birthday",birthday)
+              return await Beanie.find(birthday).exec()
+          } 
+          if ('search' in args) {
+              console.log("args.search", args.search);
+              const result = await Beanie.find({
+                  $text: { $search: args.search }}).exec();
+              console.log("result",result)
+              return result
+            }
           return await Beanie.find({}).exec()
     },
     getBeanie: async (_,args) => {
