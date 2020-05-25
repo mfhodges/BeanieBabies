@@ -58,9 +58,9 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
 const todayDate = new Date();
-const todayMonth = toString(todayDate.getMonth());
-const todayDay = toString(todayDate.getDate());
-console.log("Today is ", todayMonth, todayDay);
+const todayMonth = todayDate.getMonth().toString();
+const todayDay = todayDate.getDate().toString();
+console.log("Today is ", todayMonth, todayDay, typeof todayMonth);
 // Use a hook to query Graphql to get todays BDAY
 // If none set to sad face
 const _today =  useQuery(SEARCH_BIRTHDAYS_TODAY,{
@@ -88,12 +88,13 @@ if (_today.error) return `Error (today)! ${_today.error.message}`;
 return(
     <div>
         <h1>Today's Birthday!<span role="img" aria-label="party popper">🎉</span></h1>
+        <h4>Date: {todayMonth}/{todayDay}</h4>
         <p> Search Capabilities comming soon.</p>
-        
+        <div className='bdaycards'>
         {_today.data['getBeanies'].map((beanie) => (
             <BBCard beaniebaby={beanie} key={beanie.id} />
         ))}
-        
+        </div>
         <h3>Birthdays This Month</h3>
         
         <div className='cards'>

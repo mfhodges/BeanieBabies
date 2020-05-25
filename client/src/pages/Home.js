@@ -16,7 +16,7 @@ return(
 
         </p>
         <p>Currently, this site offers limited search capabilities. Hopefully in the coming months this will be developed further to include search by Zodiac Sign, Birthday and other meta-data fields.</p>
-        <p> To see the only Beanie Baby listed please check out <a href="/beanies/1"> this page</a></p>
+        {/*<p> To see the only Beanie Baby listed please check out <a href="/beanies/1"> this page</a></p>*/}
 
     </div>)
 }
