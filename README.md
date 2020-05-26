@@ -3,84 +3,28 @@ Full Stack Beanie Babies Database Built with React and GraphQL. This project is 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The GraphQL API was created by following the Frontend Masters Course: https://frontendmasters.com/courses/server-graphql-nodejs/
-
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-For info on how I got the data and cleaned it please refer to the `README.md` in the `webscraping/` folder.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples ...
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example...
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+This project is technically two projects in one: 
+- First a GraphQL API served from the `graphql/` path built with Apollo Server and Express. 
+- Second a React App served with `express.static` which uses Apollo Client to connect to the GraphQL API. 
 
 ## Deployment
+The app is currently hosted on Heroku's free tier and uses [mlab](https://mlab.com/) to host the database. 
 
-Add additional notes about how to deploy this on a live system
 
 ## Built With
-* [React]() - The web framework
-* [Node]() -
-* [Material UI]() -
-* [GraphQL]() -
-* [Apollo]() -
+* [React](https://github.com/facebook/create-react-app) - The web framework used to serve a static site.
+* [Mongoose](https://mongoosejs.com/) - Object modeling tool for MongoDB.
+* [GraphQL](https://graphql.org/) - Spec for query language.
+* [Apollo](https://www.apollographql.com/) - used in backend for API server and in frontend for client.
 
 
 # GraphQL
+The Schema is still being developed for this project. My plan is to slowly build out the API and follow the Best Practices (https://graphql.org/learn/best-practices/#versioning) to Version the continuous evolution.
 
-
-
-# Accessibility
-
+Mutations have been disabled in production but can be viewed in the Docs and Schema in the GraphQL playground.
 
 <hr>
 
 # Resources 
-- GraphQL Book
-- FEM Course
-- Material UI
-- 
+- [Production Ready GraphQL](https://book.productionreadygraphql.com/) 
+- [FEM Course](https://frontendmasters.com/courses/server-graphql-nodejs/)
