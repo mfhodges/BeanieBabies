@@ -48,17 +48,22 @@ const resolvers = {
        return bb;
     },
 },
-  Mutation: {
-    addBeanie: async (_, args) => {
-        try {
-            let response = await Beanie.create(args);
-            return response;
-        } catch(e) {
-            return e.message;
-        }
-    }
-}
+
 };
+// no mutation in production! 
+if (process.env.NODE_ENV !== 'production') {
+    resolvers['Mutation'] = {
+        addBeanie: async (_, args) => {
+            try {
+                let response = await Beanie.create(args);
+                return response;
+            } catch(e) {
+                return e.message;
+            }
+        }
+    };
+}
+
 /**
  *  Mutation: {
       addBeanie: async (_, args) => {
