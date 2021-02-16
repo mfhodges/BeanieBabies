@@ -3,8 +3,8 @@ import BBCard from '../components/BBCard'
 import Select from 'react-select'
 import { useLazyQuery } from 'react-apollo'
 import gql from 'graphql-tag';
-
-
+import ExampleDate from '../components/DatePicker'
+import 'react-day-picker/lib/style.css';
 
 
 const SEARCH_BEANIES = gql`
@@ -34,35 +34,51 @@ export default function Search () {
     const [title, updateTitle] = useState("Enter Name");
     const [getBeanies, { called,loading,data}] = useLazyQuery(SEARCH_BEANIES,
         {variables: { "search": title}});
+    const [bday, updateBday] = useState("Enter Date");
+
     
 
     if (called && loading) return <p>Loading</p>;
 
 
     if (!called){
-    return(
-        <Fragment>
-            <h1><span role="img" aria-label="Magnifying Glass">🔎</span> Search <span role="img" aria-label="Magnifying Glass">🔍</span></h1>
-            <p>Searching: `{title}`</p>
-            <p>To Query Alphabetically, just search the desired letter.</p>
-            <form
-            onSubmit={e => {
+    return (
+      <Fragment>
+        <h2>
+          <span role="img" aria-label="Magnifying Glass">
+            🔎
+          </span>{" "}
+          Search by Name{" "}
+          <span role="img" aria-label="Magnifying Glass">
+            🔍
+          </span>
+        </h2>
+        <h4>Searching: `{title}`</h4>
+        <p>To Query Alphabetically, just search the desired letter.</p>
+        <form className="form-inline"
+          onSubmit={(e) => {
             e.preventDefault();
             getBeanies();
-            }}
+          }}
         >
-            <label htmlFor="title">
+          <label htmlFor="title">
             Name
             <input
-                id="title"
-                value={title}
-                placeholder="Name"
-                onChange={e => updateTitle(e.target.value)}
+              id="title"
+              value={title}
+              placeholder="Name"
+              onChange={(e) => updateTitle(e.target.value)}
             />
-            </label>
-            <button>Submit</button>
+          </label>
+          <button>Submit</button>
         </form>
-        </Fragment>)
+        
+        <hr></hr>
+        <h2>Search by Birthday</h2>
+          <ExampleDate />
+          
+      </Fragment>
+    );
         }
     
         // <pre>{JSON.stringify(data,null,2)}</pre>

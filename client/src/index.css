@@ -561,7 +561,7 @@ body {
 nav {
     color: #fff;
     background-color: var(--second-red);
-    z-index: 1500;
+    z-index: 0; /*this was 1500*/
     height: 35px;
     padding: .5em 35px
 }
@@ -989,6 +989,46 @@ dl {
     height:auto;
 }
 
+button {
+    background-color:var(--second-red);
+    font-size: .85rem;
+    box-shadow: none;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+}
+
+.form-inline {
+    display:flex; flex-flow: row wrap; justify-content: center;
+}
+.form-inline input,span {
+    padding: 10px;
+}
+
+input {
+    font-size: .85rem;
+}
+
+.form-inline input {
+    display:inline;
+    margin: 0 10px 0 10px; 
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+@media (max-width: 800px) {
+    .form-inline input {
+        margin: 10px 0;
+        min-width:100% !important;
+    }
+    .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
 /*mobile phone*/
 @media screen and (max-width: 450px) {
     #root>header h1 {
@@ -1022,4 +1062,18 @@ dl {
     }
 
 
+  }
+  
+  div.alert > div {
+    padding:10px;
+    border: 10px solid;
+    border-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red) 1;  }
+
+
+  img.portrait {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom: 10px;
   }

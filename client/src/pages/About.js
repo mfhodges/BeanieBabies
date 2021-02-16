@@ -18,7 +18,7 @@ return(
         <p>
             After I had scrapped all the data I needed for this project, I let my motivation slip .Then one day in March I was looking at the Beanie Baby that sits at my desk, Scurry,  and noticed my bug friend was born on January 18th. I had missed his birthday 😭!!!
         </p>
-        <center><p>(Insert image of scurry here)</p></center>
+        <img className="portrait" src="/scurry_portrait.jpg"></img>
         <p>
             I realized my life-long friend Scurry was also a Capricorn. As a Scorpio, I was shocked by our bond since we traditionally are not very compatible.</p>
             <blockquote> And then it hit me ... they ALL have ZODIAC SIGNS!!!</blockquote> 
